@@ -2,7 +2,7 @@
   "name": "reactjs-es5-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for reactjs on es5",
-  "main": "index.js",
+  "main": "js/app.js",
   "dependencies": {
   	"classnames": "2.2.*",
 		"flux": "^2.1.1",
@@ -12,8 +12,10 @@
   },
   "devDependencies": {
     "browserify": "^6.2.0",
+    "catw": "^1.0.1",
     "reactify": "^0.15.2",
-    "watchify": "^3.4.0"
+    "watchify": "^3.4.0",
+    "less": "^2.6.1"
   },
   "browserify": {
     "transform": [
@@ -21,8 +23,9 @@
     ]
   },
   "scripts": {
+    "start-css": "catw -c 'lessc -' 'css/src/*.less' -o css/bundle.css -v",
     "start-js": "watchify -o js/bundle.js -v -d js/app.js",
-    "start": "npm run start-js"
+    "start": "npm run start-css & npm run start-js"
   },
   "author": "Ignusmart",
   "license": "ISC"

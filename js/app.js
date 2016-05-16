@@ -1,4 +1,4 @@
-var TwnelApp = require('./components/MyApp.react');
+var MyApp = require('./components/MyApp.react');
 var React = require('react');
 var ReactDom = require('react-dom');
 
